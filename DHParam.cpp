@@ -1,4 +1,9 @@
 /*
+    DHParam.cpp - Library for implementing the proper Denavit-Hartenberg Parameters.
+    Created by Ioannis Symeonidis, 24 April 2019.
+    Released into the public domain.
+*/
+/*
     DHParam.cpp - Library for implementing Denavit-Hartenberg Parameters.
     Created by Nathan Rukavina, July 17, 2017.
     Released into the public domain.
@@ -53,17 +58,17 @@ float DHParam::getAlpha() {
 
 void DHParam::getTransformation(float arr[4][4], DHParam from) {
   arr[0][0] = cos(theta);
-  arr[0][1] = -sin(theta);
-  arr[0][2] = 0;
-  arr[0][3] = a;
-  arr[1][0] = sin(theta) * cos(from.getAlpha());
+  arr[0][1] = -sin(theta)* cos(from.getAlpha());
+  arr[0][2] = sin(theta)*sin(from.getAlpha());
+  arr[0][3] = a*cos(theta);
+  arr[1][0] = sin(theta) ;
   arr[1][1] = cos(theta) * cos(from.getAlpha());
-  arr[1][2] = -sin(from.getAlpha());
-  arr[1][3] = -sin(from.getAlpha()) * d;
-  arr[2][0] = sin(theta) * sin(from.getAlpha());
-  arr[2][1] = cos(theta) * sin(from.getAlpha());
+  arr[1][2] = -cos(theta) *sin(from.getAlpha());
+  arr[1][3] = a*sin(theta);
+  arr[2][0] = 0;
+  arr[2][1] = sin(from.getAlpha());
   arr[2][2] = cos(from.getAlpha());
-  arr[2][3] = cos(from.getAlpha()) * d;
+  arr[2][3] = d;
   arr[3][0] = 0;
   arr[3][1] = 0;
   arr[3][2] = 0;
