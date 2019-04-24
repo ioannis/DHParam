@@ -1,10 +1,10 @@
 /*
-    DHParam.cpp - Library for implementing the proper Denavit-Hartenberg Parameters.
+    DHParam.cpp - Library for implementing the classic Denavit-Hartenberg Parameters.
     Created by Ioannis Symeonidis, 24 April 2019.
     Released into the public domain.
 */
 /*
-    DHParam.cpp - Library for implementing Denavit-Hartenberg Parameters.
+    Based on DHParam.cpp - Library for implementing the modified Denavit-Hartenberg Parameters.
     Created by Nathan Rukavina, July 17, 2017.
     Released into the public domain.
 */
